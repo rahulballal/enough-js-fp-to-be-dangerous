@@ -147,8 +147,8 @@ const averageAcceleration = result
 
 ## 5. Resources
 
-- [FunFunFunction FP Series](https://www.youtube.com/watch?v=BMUiFMZr7vk&list=PL0zVEGEvSaeEd9hlmCXrk5yUyqUag-n84)
-- [Functional Programming in 40 minutes](https://www.youtube.com/watch?v=0if71HOyVjY)
-- [Plain Functional Programming by Martin Ordersky](https://www.youtube.com/watch?v=YXDm3WHZT5g)
-- [Functional Programming Lite by Kyle Simpson](https://github.com/getify/Functional-Light-JS)
+- Videos: [FunFunFunction FP Series](https://www.youtube.com/watch?v=BMUiFMZr7vk&list=PL0zVEGEvSaeEd9hlmCXrk5yUyqUag-n84)
+- Video: [Functional Programming in 40 minutes](https://www.youtube.com/watch?v=0if71HOyVjY)
+- Video: [Plain Functional Programming by Martin Ordersky](https://www.youtube.com/watch?v=YXDm3WHZT5g)
+- Repo: [Functional Programming Lite by Kyle Simpson](https://github.com/getify/Functional-Light-JS)
 - Book: Mastring Functional Programming in JavaScript
