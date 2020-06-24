@@ -1,0 +1,57 @@
+{
+  "_id": "5ef2c70f2d47af5af87625bd",
+  "index": 5,
+  "guid": "52488dd8-235b-49ea-b50d-82719246035b",
+  "isActive": true,
+  "balance": "$3,613.14",
+  "picture": "http://placehold.it/32x32",
+  "age": 22,
+  "eyeColor": "blue",
+  "name": {
+    "first": "Pickett",
+    "last": "Kent"
+  },
+  "company": "DIGIQUE",
+  "email": "pickett.kent@digique.ca",
+  "phone": "+1 (862) 413-3950",
+  "address": "957 Dinsmore Place, Cobbtown, North Dakota, 2235",
+  "about": "Esse fugiat qui adipisicing veniam eu nostrud. Consectetur ad minim irure consectetur incididunt excepteur ad. Ea laborum elit Lorem in cillum excepteur eu ullamco nisi proident commodo excepteur et ullamco. Qui tempor non excepteur laborum ipsum cupidatat esse Lorem dolore qui consequat voluptate esse. Laboris laboris velit tempor ullamco pariatur eu veniam id officia.",
+  "registered": "Sunday, March 23, 2014 6:57 PM",
+  "latitude": "-71.710568",
+  "longitude": "105.944564",
+  "tags": [
+    "officia",
+    "ipsum",
+    "amet",
+    "labore",
+    "id"
+  ],
+  "range": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "friends": [
+    {
+      "id": 0,
+      "name": "Copeland Puckett"
+    },
+    {
+      "id": 1,
+      "name": "Gibbs Dalton"
+    },
+    {
+      "id": 2,
+      "name": "Whitley Mathis"
+    }
+  ],
+  "greeting": "Hello, Pickett! You have 6 unread messages.",
+  "favoriteFruit": "apple"
+}
