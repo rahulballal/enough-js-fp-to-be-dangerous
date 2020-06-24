@@ -24,7 +24,7 @@ function addWatermelon(fruitList) {
 
 function someOtherFn(twoFruitArray){}
 
-// input was modified directly :(
+// input not modified directly :(
 addWatermelon(fruits)
 someOtherFn(fruits) // this guy gets 3 fruits but maybe expected 2 ?
 ```
@@ -39,7 +39,7 @@ function addWatermelon(fruitList) {
 
 function someOtherFn(twoFruitArray){}
 
-// input was modified directly :(
+// input not modified
 const withWaterMelon = addWatermelon(fruits)
 someOtherFn(fruits) // this guy gets 2 fruits as it wants
 ```
@@ -61,7 +61,7 @@ function encryptString(strToEncrypt) {
     const iterations = parseInt(process.env.HASH_ITERATIONS)
     return symmetricHash(strToEncrypt, salt, iterations)
 }
-// There is no guarantee that this function will return same thing with same output
+// There is no guarantee that this function will return same output with same input
 const encrypted = encryptString('JavaScript')
 ```
 
@@ -119,6 +119,7 @@ const calcAvgAcceleration = (v0, v1, time) => (v1-v0)/time
 
 }
 const { result, error } = (v0,v1, time) => divide(time, subtract(v0, v1))
+
 if (error) {
   throw new Error(error)
 }
@@ -141,7 +142,7 @@ const averageAcceleration = result
 
 ## 4. Final thoughts.
 
-1. It is not possible to write Pure functional code in JS. We can surely write JS in a functional STYLE.
+1. It is not possible to write 100% Pure functional code in JS. We can surely write JS in a functional STYLE.
 2. Functional programming is more of a thinking style than a programming style.
 3. The constraints of FP, helps us write more declarative and safe code
 
@@ -151,4 +152,4 @@ const averageAcceleration = result
 - Video: [Functional Programming in 40 minutes](https://www.youtube.com/watch?v=0if71HOyVjY)
 - Video: [Plain Functional Programming by Martin Ordersky](https://www.youtube.com/watch?v=YXDm3WHZT5g)
 - Repo: [Functional Programming Lite by Kyle Simpson](https://github.com/getify/Functional-Light-JS)
-- Book: Mastring Functional Programming in JavaScript
+- Book: Mastering Functional Programming in JavaScript

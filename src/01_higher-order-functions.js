@@ -6,24 +6,23 @@
 
 const add = (num1, num2) => num1 + num2
 
-// Curried add is a higher order function
+/**
+ * Curring and Higher order function
+ **/
 const curriedAdd = num1 => num2 => num1 + num2
 
-// Higher order functions with partial application
-
+/**
+ * Higher order function with partial application
+ **/
 const add2NumbersWithPresetConstant = num1 => {
     const withPreset = num1 + 10
 
     return (num2) => num2 + withPreset
 }
 
-
-
-
-
-
-
-// Runs
+/**
+ * RUN This
+ **/
 
 const r1 = add(4, 10)
 // r1
