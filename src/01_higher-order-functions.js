@@ -15,9 +15,9 @@ const curriedAdd = num1 => num2 => num1 + num2
  * Higher order function with partial application
  **/
 const add2NumbersWithPresetConstant = num1 => {
-    const withPreset = num1 + 10
+  const withPreset = num1 + 10
 
-    return (num2) => num2 + withPreset
+  return (num2) => num2 + withPreset
 }
 
 /**
