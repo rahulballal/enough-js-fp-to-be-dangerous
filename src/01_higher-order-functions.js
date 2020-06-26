@@ -1,5 +1,6 @@
 /**
  * Higher order function is a function that returns another function.
+ * Inputs can be arguments or any other function
  * Higher order functions are used to accomplish currying and partial application.
  * In React we have commonly seen this as HOC
  * **/

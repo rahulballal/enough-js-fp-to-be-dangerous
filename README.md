@@ -15,7 +15,7 @@
 Once data is created, no other function or process can mutate it. A new copy is returned.
 
 *NON FP STYLE*
-```ecmascript 6
+```javascript
 const fruits = ['apple', 'kiwi']
 
 function addWatermelon(fruitList) {
@@ -30,7 +30,7 @@ someOtherFn(fruits) // this guy gets 3 fruits but maybe expected 2 ?
 ```
 *FP Style*
 
-```ecmascript 6
+```javascript
 const fruits = ['apple', 'kiwi']
 
 function addWatermelon(fruitList) {
@@ -54,7 +54,7 @@ the function.
 
 *Impure function example*
 
-```ecmascript 6
+```javascript
 // The result of this function is completely dependent on environment variables.
 function encryptString(strToEncrypt) {
     const salt = String(process.env.ENCRYPTION_SALT)
@@ -67,7 +67,7 @@ const encrypted = encryptString('JavaScript')
 
 *Pure function example*
 
-```ecmascript 6
+```javascript
 // All non-deterministic side effects are isolated
 function getSaltAndIterationCount() {
     return {
@@ -101,12 +101,12 @@ __Note__
 Simplistic Eg: Average acceleration is the change in velocity over time
 
 *NON FP*
-```ecmascript 6
+```javascript
 // This function performs subtraction AND division
 const calcAvgAcceleration = (v0, v1, time) => (v1-v0)/time
 ```
 *FP Way*
-```ecmascript 6
+```javascript
  const subtract = (val1 = 0, val2 = 0) => val2 - val1
  const divide = (divisor = 0, dividend = 0) => {
     if (dividend === 0) {
