@@ -1,4 +1,4 @@
-const _ = require('lodash/fp')
+const R = require('ramda')
 
 // Example object
 const data = {
@@ -17,32 +17,34 @@ const data = {
 }
 
 /**
- * _.getOr is used for accessing particular field in an object in safe way with provided defaults.
+ * R.path and R.pathOr is used for accessing particular field in an object in safe way with provided defaults.
  * Use this function when you are unsure if the field exists or not
  * This function is auto-curried in the FP variant of Lodash
  *
- * getOr(defaultValue, pathToObject, objectToReachInto)
+ * R.pathOr(defaultValue, pathToObject, objectToReachInto)
  * */
 
-const firstName = _.getOr('', 'name.first', data)
+const firstName =  R.path(['name', 'first'], data)
 // firstName
 
 const err1 = data.name.second
 // err1
 
-const expectedErr = _.getOr(undefined, 'name.second', data)
+const expectedErr =  R.pathOr(undefined, 'name.second', data)
 // expectedErr
 
-const getOrEmptyString = _.getOr('')
+const getOrEmptyString = R.pathOr('')
 const expectedErr2 = getOrEmptyString('name.second', data)
 // expectedErr2
 
 
 /**
- * _.at is used to access values of one or more fields in an object
+ * R.pickAll or R.paths is used to access values of one or more fields in an object
  * Use this when you are sure that a value would exist since there is no way to give it a safe default
  * */
-const [isActive, eyeColor, age] = _.at(['isActive', 'eyeColor', 'age'], data)
-// isActive
-// eyeColor
-// age
+const { isActive, eyeColor, age }= R.pickAll(['isActive', 'eyeColor', 'age'], data)
+
+const [ isActive2, eyeColor2, age2 ] = R.paths([['isActive'], ['eyeColor'], ['age']], data)
+// isActive2
+// eyeColor2
+// age2

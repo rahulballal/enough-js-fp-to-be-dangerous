@@ -1,4 +1,4 @@
-const _ = require('lodash/fp')
+const R = require('ramda')
 
 const data = [
   {
@@ -26,17 +26,18 @@ const data = [
 ]
 
 /**
- * _.matches is the if conditional on steroids. It is a more declarative and composable way to assert shape of an object with contents
+ * R.whereEq is the if conditional on steroids. It is a more declarative and composable way to assert shape of an object with contents
  * The result true if the JSON structure matches the object
  * */
-const firstItem = _.head(data)
-const isMatch1 = _.matches({ id: 10 })(firstItem)
-// isMatch
-const isMatch2 = _.matches({ id: 0, nested: { foo: 'bar' } })(firstItem)
-// isMatch2
+const firstItem = R.head(data)
+// firstItem
+const isMatch1 = R.propEq('id', 0, firstItem)
+// isMatch1
+const isMatch2 = R.whereEq({ id: 0, nested: { foo: 'bar' } })(firstItem)
+//isMatch2
 
 /**
- * _.cond is the switch statement on steroids. It is a more declarative/ composable way to perform code branching without
+ * R.cond is the switch statement on steroids. It is a more declarative/ composable way to perform code branching without
  * having a deeply nested code structure
  *
  * const result = _.cond([
@@ -55,13 +56,13 @@ const isMatch2 = _.matches({ id: 0, nested: { foo: 'bar' } })(firstItem)
  *   [check4, do4]
  * ])
  *
- * const bothRuleSetsApplied = _.over([ruleSet1, ruleSet2])(data)
+ * const bothRuleSetsApplied = _.map(fn => fn(data), [ruleSet1, ruleSet2])
  *
  * */
 
-const switchOnSteroid = _.cond([
-  [_.matches({ id: 10 }), _.constant('firstItem id is 10')],
-  [_.matches({ id: 0, nested: { foo: 'bar' } }), _.get('nested.foo')]
+const switchOnSteroid = R.cond([
+  [R.whereEq({ id: 10 }), R.identity('firstItem id is 10')],
+  [R.whereEq({ id: 0, nested: { foo: 'bar' } }), R.path(['nested','foo'])]
 ])
 
 const sos1 = switchOnSteroid(firstItem)
@@ -72,17 +73,17 @@ const sos2 = switchOnSteroid({})
 // sos2
 
 /**
- * _.conformsTo is the _.matches on steroids. Use this to check if an object's individual fields abide by the rules
+ * R.where Use this to check if an object's individual fields abide by the rules
  * you defined.
  * Yes, this function is also curried and composable
  * */
-const itemLast = _.last(data)
-
+const itemLast = R.last(data)
+// itemLast
 const conformExpression = {
-  id: (it) => it === 10,
-  name: (it) => it === 'Rahul Ballal',
-  nested: (it) => _.has('foo', it)
+  id: R.equals(10),
+  name: R.equals('Rahul Ballal'),
+  nested: R.has('foo')
 }
 
-const conf1 = _.conformsTo(conformExpression)(itemLast)
+const conf1 = R.where(conformExpression)(itemLast)
 // conf1
